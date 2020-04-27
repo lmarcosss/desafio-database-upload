@@ -28,15 +28,7 @@ class TransactionsRepository extends Repository<Transaction> {
   }
 
   public async all(): Promise<TransactionDTO> {
-    const transactions = await this.createQueryBuilder('transactions')
-      .select('transactions.id')
-      .addSelect('transactions.title')
-      .addSelect('transactions.type')
-      .addSelect('transactions.value')
-      .addSelect('category.id')
-      .addSelect('category.title')
-      .leftJoin('transactions.category', 'category')
-      .getMany();
+    const transactions = await this.find();
 
     const balance = await this.getBalance();
 
