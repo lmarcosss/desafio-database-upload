@@ -5,4 +5,4 @@ Framework utilizado:
 
 Para instalar as dependências: ` yarn install `
 
-Para rodar o projeto: ` yarn start `
+Para rodar o projeto: ` yarn dev:server `
